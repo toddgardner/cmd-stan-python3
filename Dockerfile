@@ -1,8 +1,8 @@
-FROM python:3.6
+FROM python:3.7
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV PYTHONUNBUFFERED 1
-ENV STANVERSION 2.17.0
+ENV STANVERSION 2.19.0
 
 # Install LLVM
 RUN apt-get update && apt-get install -y \
