@@ -6,7 +6,7 @@ ENV STANVERSION 2.19.0
 
 # Install LLVM
 RUN apt-get update && apt-get install -y \
-    clang-3.5 \
+    clang-3.9 \
     postgresql-client \
     libc++-dev
 RUN ln -s /usr/bin/clang++-3.5 /usr/bin/clang++
