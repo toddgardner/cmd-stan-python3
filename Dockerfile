@@ -1,15 +1,17 @@
-FROM python:3.8
+FROM python:3.7.7
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV PYTHONUNBUFFERED 1
-ENV STANVERSION 2.19.0
+ENV STANVERSION 2.22.1
 
 # Install LLVM
 RUN apt-get update && apt-get install -y \
     clang-3.9 \
     postgresql-client \
     libc++-dev
-RUN ln -s /usr/bin/clang++-3.5 /usr/bin/clang++
+
+# Install CMake
+RUN apt-get install -y cmake
 
 # Download and compile cmdStan
 WORKDIR /opt
